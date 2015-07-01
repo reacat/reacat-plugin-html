@@ -9,14 +9,14 @@ function parseHTML() {
     if (!source.page) return;
     var extname = path.extname(filePath).toLowerCase();
     if (extnames.indexOf(extname) === -1) return;
-    var htmlContent = source.page.content;
-    source.page.content = React.createClass({
-      displayName: 'Content',
+    var htmlContent = source.page.Content;
+    var Content = React.createClass({
       render: function() {
         return <article dangerouslySetInnerHTML={{__html: htmlContent}}/>;
       }
     });
-    this.log.verbose('parseHTML', source.page.content);
+    source.page.Content = Content;
+    this.log.verbose('parseHTML', source.page.Content);
   }).bind(this));
 }
 
