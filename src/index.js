@@ -1,7 +1,4 @@
-'use strict';
-
 var path = require('path');
-var marked = require('marked');
 var React = require('react');
 
 var extnames = ['.html', '.htm'];
